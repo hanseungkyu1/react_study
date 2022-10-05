@@ -1,3 +1,19 @@
+.start {
+  opacity: 0;
+}
+
+.end {
+  opacity: 1;
+  transition: opacity 2.5s;
+}
+
+.main-bg {
+  height: 300px;
+  background-image: url('./img/bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .App {
   text-align: center;
 }

@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+// redux-query 세팅
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* react-query 세팅 */}
+    <QueryClientProvider client={queryClient}>
+      {/* redux 세팅 */}
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
